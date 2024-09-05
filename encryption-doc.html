@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Algorithms Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            color: #88cc88;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #ff6666;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            margin: 15px;
+        }
+
+        .section {
+            background-color: #222;
+            border-left: 5px solid #44cc44;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.03);
+        }
+
+        .example-box {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #cc5555;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            color: #ccc;
+        }
+
+        table, th, td {
+            border: 1px solid #555;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #44cc44;
+        }
+
+        /* Hover effect for table rows */
+        tr:hover {
+            background-color: #2b2b2b;
+            color: #ff6666;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .summary {
+            text-align: center;
+            margin: 50px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            color: #fff;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(100px); }
+            100% { transform: translateY(0); }
+        }
+
+        a {
+            color: #88cc88;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ff6666;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Encryption Algorithms Overview</h1>
+    </header>
+
+    <section class="section">
+        <h2>Introduction</h2>
+        <p>
+            Encryption is a critical technology that enables secure communication and data storage. It ensures that information is only accessible to authorized parties. 
+            Encryption algorithms are used in various security applications, such as protecting sensitive data, ensuring privacy, and securing online transactions.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Symmetric Encryption</h2>
+        <p>Symmetric encryption involves using the same key for both encryption and decryption. It is fast and efficient for large amounts of data.</p>
+
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Key Size (bits)</th>
+                <th>Block Size (bits)</th>
+                <th>Strengths</th>
+                <th>Weaknesses</th>
+                <th>Common Use Cases</th>
+            </tr>
+            <tr>
+                <td>AES</td>
+                <td>128, 192, 256</td>
+                <td>128</td>
+                <td>High security</td>
+                <td>Slower than other algorithms in some cases</td>
+                <td>Data encryption, secure communications</td>
+            </tr>
+            <tr>
+                <td>DES</td>
+                <td>56</td>
+                <td>64</td>
+                <td>Easy to implement</td>
+                <td>Weak due to short key size</td>
+                <td>Legacy systems</td>
+            </tr>
+            <tr>
+                <td>Blowfish</td>
+                <td>32-448</td>
+                <td>64</td>
+                <td>Fast</td>
+                <td>Not as widely adopted</td>
+                <td>Software encryption</td>
+            </tr>
+            <tr>
+                <td>Twofish</td>
+                <td>128, 192, 256</td>
+                <td>128</td>
+                <td>High security</td>
+                <td>Less tested than AES</td>
+                <td>Database encryption, file encryption</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Asymmetric Encryption</h2>
+        <p>Asymmetric encryption uses a public key for encryption and a private key for decryption. It is often used for secure communications and key exchange.</p>
+
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Key Generation</th>
+                <th>Strengths</th>
+                <th>Weaknesses</th>
+                <th>Common Use Cases</th>
+            </tr>
+            <tr>
+                <td>RSA</td>
+                <td>Prime factorization</td>
+                <td>High security</td>
+                <td>Slower than symmetric algorithms</td>
+                <td>Digital signatures, secure key exchange</td>
+            </tr>
+            <tr>
+                <td>ECC</td>
+                <td>Elliptic curve points</td>
+                <td>Efficient with smaller keys</td>
+                <td>More complex than RSA</td>
+                <td>Mobile encryption, digital signatures</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Hashing Algorithms</h2>
+        <p>Hashing algorithms generate a fixed-size hash value from input data. They are primarily used for ensuring data integrity and secure password storage.</p>
+
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Output Size (bits)</th>
+                <th>Collision Resistance</th>
+                <th>Common Use Cases</th>
+            </tr>
+            <tr>
+                <td>SHA-256</td>
+                <td>256</td>
+                <td>High</td>
+                <td>Data integrity, digital signatures</td>
+            </tr>
+            <tr>
+                <td>MD5</td>
+                <td>128</td>
+                <td>Weak</td>
+                <td>Checksum validation</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Other Algorithm Categories</h2>
+        <p>Several other types of encryption algorithms exist, including homomorphic encryption, quantum-resistant algorithms, and lightweight cryptography.</p>
+
+        <h3>Homomorphic Encryption</h3>
+        <div class="example-box">
+        <p>Allows computation on ciphertexts, which can be decrypted later without exposing the plaintext.</p>
+        <p><strong>Examples:</strong> BFV, CKKS, BGV</p></div>
+
+        <h3>Quantum-Resistant Algorithms</h3>
+        <div class="example-box">
+        <p>These algorithms are designed to resist quantum computing attacks, ensuring data remains secure in the post-quantum world.</p>
+        <p><strong>Examples:</strong> Lattice-Based Cryptography, Code-Based Cryptography, CRYSTALS-Kyber, FALCON</p></div>
+
+        <h3>Searchable Encryption</h3>
+        <div class="example-box">
+        <p>Allows encrypted data to be searched without needing to decrypt it first.</p>
+        <p><strong>Examples:</strong> SSE (Symmetric Searchable Encryption), PEKS (Public-Key Encryption with Keyword Search)</p></div>
+
+        <h3>Lightweight Cryptography</h3>
+        <div class="example-box">
+        <p>Designed for resource-constrained devices, such as IoT devices, where computation power and energy consumption are limited.</p>
+        <p><strong>Examples:</strong> PRESENT, SIMON, SPECK</p></div>
+
+        <h3>Post-Quantum Cryptography Standardization Candidates</h3>
+        <div class="example-box">
+        <p>Being considered by NIST for standardization. Applied for Replacing existing cryptographic algorithms that are vulnerable to quantum attacks.</p>
+        <p><strong>Examples:</strong> CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON, SPHINCS+</p></div>
+    </section>
+
+    <footer class="footer">
+        <p>Encryption is at the forefront of modern security technology, constantly evolving to meet new challenges posed by advances in computing power, such as quantum computing.</p>
+        <p>&copy; 2024 Encryption Algorithms Overview</p>
+    </footer>
+</body>
+</html>

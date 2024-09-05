@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decryption Algorithms Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            color: #88cc88;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #ff6666;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            margin: 15px;
+        }
+
+        .section {
+            background-color: #222;
+            border-left: 5px solid #44cc44;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.03);
+        }
+
+        .example-box {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #cc5555;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            color: #ccc;
+        }
+
+        table, th, td {
+            border: 1px solid #555;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #44cc44;
+        }
+
+        /* Hover effect for table rows */
+        tr:hover {
+            background-color: #2b2b2b;
+            color: #ff6666;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .summary {
+            text-align: center;
+            margin: 50px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            color: #fff;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(100px); }
+            100% { transform: translateY(0); }
+        }
+
+        a {
+            color: #88cc88;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ff6666;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Decryption Algorithms Overview</h1>
+    </header>
+
+    <section class="section">
+        <h2>Introduction</h2>
+        <p>
+            Decryption is the process of converting encrypted or encoded data back into its original form, making it readable or accessible. It plays a critical role in modern security frameworks by ensuring that only authorized entities can access sensitive information.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Symmetric Decryption</h2>
+        <p>Symmetric decryption uses the same key that was used for encryption to decrypt the data. It is often used in systems where speed is important, and both parties share the same key.</p>
+
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Key Size (bits)</th>
+                <th>Block Size (bits)</th>
+                <th>Strengths</th>
+                <th>Weaknesses</th>
+                <th>Common Use Cases</th>
+            </tr>
+            <tr>
+                <td>AES</td>
+                <td>128, 192, 256</td>
+                <td>128</td>
+                <td>High security, efficient</td>
+                <td>Resource-heavy for smaller devices</td>
+                <td>Data encryption/decryption</td>
+            </tr>
+            <tr>
+                <td>DES</td>
+                <td>56</td>
+                <td>64</td>
+                <td>Simple to implement</td>
+                <td>Vulnerable to brute-force attacks</td>
+                <td>Legacy systems</td>
+            </tr>
+            <tr>
+                <td>Blowfish</td>
+                <td>32-448</td>
+                <td>64</td>
+                <td>Efficient</td>
+                <td>Not as widely used as AES</td>
+                <td>File encryption, data encryption</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Asymmetric Decryption</h2>
+        <p>Asymmetric decryption uses a private key to decrypt data that was encrypted using a public key. This technique is commonly used for secure communications and in digital signatures.</p>
+
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Key Generation</th>
+                <th>Strengths</th>
+                <th>Weaknesses</th>
+                <th>Common Use Cases</th>
+            </tr>
+            <tr>
+                <td>RSA</td>
+                <td>Prime factorization</td>
+                <td>High security</td>
+                <td>Slower than symmetric decryption</td>
+                <td>Digital signatures, secure key exchange</td>
+            </tr>
+            <tr>
+                <td>ECC</td>
+                <td>Elliptic curve points</td>
+                <td>Smaller keys, faster</td>
+                <td>More complex key management</td>
+                <td>Mobile encryption, secure communications</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Decryption of Hashes</h2>
+        <p>While hashes are not meant to be decrypted (since they are one-way functions), techniques like rainbow tables and brute-force attacks attempt to reverse the process by finding the original input that corresponds to a given hash.</p>
+
+        <div class="example-box">
+            <h3>Examples of Decryption Techniques</h3>
+            <p>Rainbow tables, brute-force, dictionary attacks.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Decryption Techniques Used for Cryptanalysis</h2>
+        <p>Cryptanalytic attacks target vulnerabilities in encryption algorithms to reverse the encryption process without knowing the key. These include techniques like side-channel attacks and differential cryptanalysis.</p>
+
+        <div class="example-box">
+            <h3>Common Cryptanalytic Techniques</h3>
+            <p>Differential cryptanalysis, linear cryptanalysis, side-channel attacks.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Other Decryption Methods</h2>
+        <p>Decryption methods like homomorphic decryption allow for computations on encrypted data without needing to fully decrypt the data. This is used in applications like secure data analysis.</p>
+
+        <div class="example-box">
+            <h3>Examples of Other Algorithms</h3>
+            <p>Homomorphic decryption, lattice-based decryption (quantum-resistant).</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Decryption plays a vital role in maintaining secure communication and data integrity in an increasingly interconnected world. Understanding various decryption methods ensures that data remains accessible only to authorized parties.</p>
+        <p>&copy; 2024 Decryption Algorithms Overview</p>
+    </footer>
+</body>
+</html>
